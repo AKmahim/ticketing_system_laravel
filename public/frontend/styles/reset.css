@@ -1,0 +1,33 @@
+.margin{
+    margin-bottom: 60px;
+    font-size: 26px;
+}
+a{
+  color: #e2136e;
+}
+a:hover{
+  text-decoration: none;
+  color: #ffffff;
+}
+.form_group{
+    margin-bottom: 115px;
+}
+
+.margin_btn{
+    margin-bottom: 25px;
+}
+.margin_btn2{
+    margin-bottom: 100px;
+}
+.margin_btn2:hover a{
+  color: white;
+}
+.form_width{
+  padding-bottom: 0;
+}
+
+@media (max-width: 380px) {
+  .margin{
+    font-size: 22px;
+  }
+}

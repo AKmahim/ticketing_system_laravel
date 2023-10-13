@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  padding: 20px 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  width: 10%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > h1 {
+  color: #26AAE1;
+  font-weight: 900;
+  font-size: 44px;
+}
+header > p {
+  background-color: #26AAE1;
+  color: white;
+  font-weight: 500;
+  padding: 8px 15px;
+  font-size: 20px;
+}
+
+/* header secition done?? */
+
+/* banner section start  */
+.banner {
+  border: 2px solid gray;
+  margin: 5px 0 10px;
+}
+
+.top-banner {
+  display: flex;
+}
+
+.top-banner > div {
+  flex: 1;
+}
+
+/* mujib image ? */
+.gp img {
+  height: 10%;
+}
+
+/* user part start here  */
+.user {
+  display: flex;
+  flex-direction: column;
+}
+
+.user img {
+  flex: 3;
+  padding: 5px;
+}
+
+.user > div {
+  flex: 1;
+  text-align: center;
+  border-top: 2px solid gray;
+}
+.user > div > h2 {
+  margin-top: 10px;
+}
+
+/* barcode part start here  */
+.ticket_info {
+  border-left: 2px solid gray;
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+}
+
+.ticket_info > div {
+  border-bottom: 2px solid gray;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.ticket_info > div:last-child {
+  border-bottom: none;
+}
+.qrcode {
+    justify-content: space-between !important;
+}
+
+.qrcode > img {
+  width: 10%;
+}
+
+/* top banner work done / */
+
+.bottom-banner {
+  border-top: 2px solid gray;
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  font-weight: bold;
+  padding: 10px;
+  gap: 4px;
+}
+
+/* banner section done  */
+
+.note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+/* TERMS & CONDITIONS start  */
+
+.terms {
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.terms .title {
+    margin-bottom: 15px;
+  color: red;
+  text-align: center;
+}
+
+.condition {
+  display: flex;
+  gap: 2px;
+}
+
+.condition > div {
+  flex: 1;
+}
+
+.condition > div p {
+  font-size: 16px;
+}
+
+/* organizer  */
+.organizer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+}
+
+.organizer img{
+    width: 80px;
+}
+
+.line {
+  border: none;
+  border-top: 2px dashed #000000;
+  margin: 20px 20px;
+}
+
+/* ticket recipt */
+
+.ticket_recipt {
+  border: 2px solid gray;
+  margin: 5px 0 10px;
+  display: flex;
+}
+
+
+.ticket_recipt > div {
+  flex: 1;
+}
+
+.recipt_info{
+    flex: 1.4 !important;
+    border-left:  1px solid gray;
+    border-right:  1px solid gray;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1.6fr;
+}
+.recipt_info > div{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid gray;
+}
+
+.place{
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 5px;
+    border-bottom: none !important;
+
+}
+
+
+.ticket_recipt .qrcode{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+.bottom_organizer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}

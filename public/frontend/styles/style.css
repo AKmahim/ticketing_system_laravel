@@ -1,0 +1,187 @@
+/* fons from google font  */
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid blue; */
+}
+
+/* variable css  */
+:root {
+  /* Colors */
+  --primary-color: #e2136e;
+  --text-color: rgba(32, 32, 32, 0.55);
+  --body-color: #fff0f7;
+}
+
+img.banner {
+  width: 100%;
+}
+
+/* Global styles */
+body {
+  width: 100%;
+  /* height: 100%; */
+  color: var(--text-color);
+  background: var(--body-color);
+}
+
+/* Container */
+.container1 {
+  width: 100%;
+  
+}
+
+/* main css  */
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* css for logo heading  */
+.logo_heading {
+  width: 100%;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: center;
+}
+
+.logo_heading > img {
+  padding: 4px 0;
+  height: 50px;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 5px 20px;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0px 4px 4px -1px rgba(44, 44, 44, 0.25);
+  border-radius: 23px;
+  /* font style  */
+  font-family: "Hind Siliguri";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.01em;
+}
+
+.button:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.form_heading {
+  text-align: center;
+}
+
+.outer_form {
+  width: 100%;
+  background-color: var(--body-color);
+  box-sizing: border-box;
+  padding: 50px 40px;
+}
+.form_body {
+  width: 100%;
+  background: linear-gradient(
+    157.43deg,
+    rgba(255, 255, 255, 0.4) 3.24%,
+    rgba(255, 255, 255, 0.1) 98.67%
+  );
+  backdrop-filter: blur(20px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 30px;
+  outline: 1px solid rgb(0, 0, 0, 0.5);
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+
+  background: rgba(255, 247, 247, 0.15);
+  border-radius: 6px;
+}
+.input::placeholder {
+  text-align: center;
+  font-family: "Hind Siliguri";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.01em;
+  padding: 20px;
+
+  color: rgba(47, 47, 47, 0.55);
+}
+.form_width {
+  width: 100%;
+  padding-bottom: 100px;
+}
+footer {
+  font-family: "Hind Siliguri";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+
+  color: #202020;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+
+.main_color{
+  color: #e2136e;
+  text-decoration: none;
+}
+footer span {
+  color: #e2136e;
+}
+/* form all work is here  */
+.form_heading {
+  font-family: "Hind Siliguri";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 52px;
+
+  color: #e2136e;
+  margin: 23px 0 40px 0;
+}
+.form_group {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.resend-countdown{
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+#resend-otp{
+  display: none;
+}
+.resend-countdown span{
+  font-size: 1.3rem;
+}
+@media (max-width: 320px) {
+  .input::placeholder {
+    font-size: 14px;
+  }
+}

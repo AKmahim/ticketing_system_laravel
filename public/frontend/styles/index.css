@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+
+/* countdown style  */
+
+
+/* Countdown container */
+.countdown1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 25px; */
+    position: relative;
+  }
+  /* "border-gray-500 z-[999]  bg-blue-200 py-3 pl-4 pr-8 rounded-xl border-4 mx-auto grid justify-center  grid-cols-7 w-full  md:w-7/12 " */
+  .countdown1 > div {
+    margin: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .countdown1 .single_clock {
+    background: linear-gradient(
+      157.43deg,
+      rgba(255, 255, 255, 0.4) 3.24%,
+      rgba(255, 255, 255, 0.1) 98.67%
+    );
+    backdrop-filter: blur(20px);
+    /* Note: backdrop-filter has minimal browser support */
+  
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+  
+    /* color: #e2136e; */
+    color:#0093d8;
+    /* text-shadow: 0px 4px 9px rgba(0, 0, 0, 0.70); */
+    outline: 1px solid rgb(214, 214, 214);
+  }
+  
+  /* .shadow {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+  
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #c6c6c6 0%,
+      rgba(245, 245, 245, 0) 95.83%
+    );
+    opacity: 0.6;
+    bottom: -10px;
+    z-index: 1;
+  } */
+  
+  .clock_label {
+    padding-top: 1rem;
+    font-family: "Hind Siliguri";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 23px;
+    letter-spacing: 0.01em;
+    color: rgba(44, 143, 224, 0.9);
+  }
+
+
+  .button {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 5px 20px;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0px 4px 4px 5px rgba(44, 44, 44, 0.25);
+    border-radius: 23px;
+    /* font style  */
+    font-family: "Hind Siliguri";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.01em;
+  }
+  
+  .button:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    scale: 1.1;
+  }
+
+
+  /* ============= media query ================= */
+
+@media (max-width:406px) {
+    .countdown1 .single_clock{
+        width: 40px;
+        height: 40px;  
+        font-size: 25px;
+    }
+  }
+  
+  @media (max-width:576px) {
+    .countdown1 .single_clock{
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+    }
+  }
+  @media (max-width:760px) {
+    .countdown1 .single_clock{
+        width: 80px;
+        height: 80px;
+    }
+  }
