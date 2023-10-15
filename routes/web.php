@@ -30,6 +30,7 @@ Route::post('/login_logic','App\Http\Controllers\FrontendController@LoginLogic')
 Route::get('/view-ticket','App\Http\Controllers\FrontendController@ViewTicket')->name('view-ticket');
 Route::get('/download-ticket','App\Http\Controllers\FrontendController@generatePDF')->name('download-ticket');
 
+Route::get('/generate-qr-code', 'App\Http\Controllers\FrontendController@generateAndSaveQRCode');
 
 
 
@@ -45,7 +46,7 @@ Route::get('/download-ticket','App\Http\Controllers\FrontendController@generateP
 // Route::get('/signin','App\Http\Controllers\FrontendController@login')->name('signin');
 // Route::post('/login_logic','App\Http\Controllers\FrontendController@login_logic')->name('login_logic');
 
-// Route::get('/test','App\Http\Controllers\FrontendController@test')->name('test');
+Route::get('/test','App\Http\Controllers\FrontendController@test')->name('test');
 
 
 

@@ -51,9 +51,7 @@
             <div >
                 <a href="{{ route('index') }}"><img class="xl:h-[100px] md:w-[250px]" src="{{ asset("frontend/images/gp-logo.png") }}" alt="" srcset=""></a>
             </div>
-            <div>
-                <img class="xl:h-[200px]" src="{{ asset("frontend/images/joy-bangla.png") }}" alt="" srcset="">
-            </div>
+            
             <div>
                 <img class="xl:[100px] md:w-[250px]" src="{{ asset("frontend/images/cholo-bangladesh.png") }}" alt="" srcset="">
             </div>

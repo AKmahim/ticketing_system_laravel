@@ -13,7 +13,11 @@ use PDF;
 use Spatie\Browsershot\Browsershot;
 use App\Mail\PdfEmail;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Facades\QrCode;
+use Illuminate\Support\Facades\Storage; 
+use Illuminate\Support\Facades\Facade;
+use SimpleSoftwareIO\QrCode\Generator;
+// use simplesoftwareio\simple-qrcode\src\Facades\QrCode;
 class FrontendController extends Controller
 {
     
@@ -180,50 +184,56 @@ class FrontendController extends Controller
     public function generatePDF()
     {
         // debugCss: false
-        // $pdf = PDF::loadView('frontend.view_ticket',)
-        // ->setOptions([
-        //     'tempDir' => public_path(),
-        //     'chroot' => public_path(),
-        //     'isPhpEnabled' => true,
-        //     'isHtml5ParserEnabled' => true,
-        //     'isFontSubsettingEnabled' => true,
+        $pdf = PDF::loadView('frontend.view_ticket',)
+        ->setOptions([
+            'tempDir' => public_path(),
+            'chroot' => public_path(),
+            'isPhpEnabled' => true,
+            'isHtml5ParserEnabled' => true,
+            'isFontSubsettingEnabled' => true,
             
-        // ]);
+        ]);
 
-        // return $pdf->stream('webappfix.pdf');
-        return Pdf::loadFile(public_path("Emad/index.html"))->save('/frontend/pdf/output.pdf')->stream('download.pdf');
+        return $pdf->stream('ticket.pdf');
+        // return Pdf::loadFile(public_path("Emad/index.html"))->save('/frontend/pdf/output.pdf')->stream('download.pdf');
     }
 
+    public function generateAndSaveQRCode(Request $request)
+    {
+        // Replace with the text you want to encode
+        $textToEncode = "https://cholo-bangladesh-concert/users/01635227460";
 
-    
-    
+        // Make a request to the Express API
+        $response = Http::post('http://localhost:3000/generate-qr-code', [
+            'text' => $textToEncode,
+        ]);
 
-    public function LiveConcert(){
-        if (Session::has('phone_number'))
-        {
-            //
-            $phone = Session::get('phone_number');
-            $user = StreamViewer::where('phone_number',$phone)->first();
-            if($user->payment_status == "Completed"){
-                return view('frontend.live-concert');
-            }
-            
-        }
-        else{
-            return Redirect()->route('index');
-        }
         
+        if ($response->successful()) {
+            // Get the dataURL from the API response
+            $dataURL = $response->json('dataURL');
+
+            // Save the QR code image to local storage
+            $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $dataURL));
+            $imageName = 'frontend/images/qr_code.png'; // Specify the desired image name
+            
+            $publicPath = public_path($imageName); // Get the full public path
+
+            // Save the image to the public folder
+            file_put_contents($publicPath, $imageData);
+
+            return 'QR code saved as ' . $imageName;
+        } else {
+            return 'Error: Unable to generate QR code';
+        }
+    }
+
+    public function test(){
+
     }
 
     
     
-    
 
-
-    //this is just a testing purpose route function
-    // public function test(){
-    //     $phone = Session::get('phone_number');
-    //     $user = StreamViewer::where('phone_number', $phone)->first();
-    //     dd($user->id);
-    // }
+   
 }
